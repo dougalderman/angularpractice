@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app = "pugsLife">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Practice </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body ng-controller = "pugController">
+
+
+  <!--
+  Good morning {{name}}!
+  <input type="text" placeholder="Add your name here!" ng-model="addedName">
+    <button ng-click="addName(addedName)">
+      Click to add name
+    </button>
+-->
+
+    <input class="form-control"
+    ng-model="msg"
+    placeholder="Say what you need to say">
+
+    <button class="btn btn-default"
+    ng-click="addMessage(msg)">Click</button>
+
+    <div ng-repeat = "gif in gifs">
+      <img ng-src = "{{gif.images.downsized_medium.url}}">
+    </div>
+    <img ng-src= "http://media0.giphy.com/media/74v4r30Pow956/giphy.gif" ng-show="noResults">
+    <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="myCtrl.js"></script>
+    <script src="dataService.js"></script>
+  </body>
+</html>
